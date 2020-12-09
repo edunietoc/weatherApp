@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <aside class="Sidebar">
+      <button class="Sidebar--item">X</button>
+      <a class="Sidebar--item" href="">Home</a>
+      <a class="Sidebar--item" href="">Featured</a>
+      <a class="Sidebar--item" href="">Details</a>
+      <a class="Sidebar--item" href="">About Project</a>
+    </aside>
+    <main>
+      <div class="SearchBar">
+        <form action="">
+          <label class="SearchBar__Label" for="City">Insert a City Name</label>
+          <input
+            class="SearchBar__Input"
+            type="text"
+            name="City"
+            placeholder="Manchester"
+          />
+          <button class="SearchBar__Button" type="submit">Go!</button>
+        </form>
+      </div>
+      <!-- 
+    Home will show:
+    Icon
+    Temperature
+    Humidity
+    Description
+ -->
+      <section class="Location">
+        <div class="Location__Hero">
+          <figure class="Location__Image">
+            <img
+              class="Location__Icon"
+              src="https://img.icons8.com/office/80/000000/partly-cloudy-day--v2.png"
+            />
+          </figure>
+          <div class="Location__Description">
+            <h2 class="Location__Description--Description">Partly Cloudy</h2>
+            <h3 class="Location__Description--City">Maracaibo, VE</h3>
+          </div>
+        </div>
+
+        <div class="Location__Temperature">
+          <h3>Temperature</h3>
+          <span>33.76 °C</span>
+        </div>
+
+        <div class="Location__Humidity">
+          <h3>Humidity</h3>
+          <span>60 %</span>
+        </div>
+
+        <button class="Location__DetailButton">Details</button>
+      </section>
+    </main>
+  </body>
+</html>

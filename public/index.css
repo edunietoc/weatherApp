@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;600;700&display=swap');
+
+*{
+    font-size: 62.5%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Spartan', sans-serif;
+    display: flex;
+}
+
+.Sidebar{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-right: 2rem;
+}
+
+.Sidebar--item{
+    padding: 3rem 2rem;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #c5c5c5;
+    border: none;
+    transition: 0.7s;
+}
+
+.Sidebar button {
+    cursor: pointer;
+    outline: none;
+    background-color: #27aa80;
+    color: white;
+}
+
+
+.Sidebar--item:hover{
+    background-color: #efefef;
+    color: #27aa80;
+}
+
+
+.SearchBar{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+}
+
+.SearchBar > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.SearchBar__Label{
+    font-size: 4rem;
+    font-weight: 700;
+    color: #27aa80;
+    padding-left: 6rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+
+}
+
+.SearchBar__Input {
+    border: 2px solid #efefef;
+    border-right: none;
+    border-radius: 30px 0px 0px 30px;
+    padding: 2rem 0rem;
+    font-size: 3rem;
+    text-align: center;
+    width: 60vw;
+    outline: none;
+    color: #c5c5c5;
+}
+
+.SearchBar__Input:focus{
+    border: 2px solid #64e291;
+    border-right: none;
+}
+
+.SearchBar__Input::placeholder {
+    color: #c5c5c5;
+}
+
+.SearchBar__Button{
+    width: 10rem;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    border-radius: 0px 20px 20px 0px;
+    background-color: #64e291;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+.SearchBar__Button:active{
+    transform: scale(0.95);
+}
+
+
+.Location{
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    margin-top: 10rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: 10rem auto;
+    border-radius: 30px 30px 30px 30px;
+    height: 60vh;
+    padding: 1rem 1rem;
+    flex-wrap: wrap;
+}
+
+.Location__Hero{
+    display: flex;
+    align-items: center;
+}
+
+
+.Location__Description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Location__Description--Description{
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0;
+    margin-top: 4rem;
+}
+
+.Location__Description--City{
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #c5c5c5;
+}
+
+.Location:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.Location__Hero{
+    display: flex;
+    width: 100%;
+    justify-content: space-around
+}
+
+
+.Location__Temperature,
+.Location__Humidity {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.Location__Temperature h3,
+.Location__Humidity h3{
+    font-size: 2.5rem;
+    width: 100%;
+    padding-left: 2rem;
+    text-align: center;
+    margin: 0;
+    padding-top: 6rem;
+    font-weight: 600;
+}
+
+.Location__Temperature span,
+.Location__Humidity span{
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+    text-align: center;
+    padding: 5rem 0;  
+    color: #c5c5c5;
+
+}
+
+.Location__Temperature button{
+    justify-self: flex-end;
+    align-self: flex-end;
+    width: 6rem;
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+}
+
+
+.Location__DetailButton {
+    width: 80%;
+    border: none;
+    border-radius: 30px 30px 30px 30px;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    background-color: #64e291;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    cursor: pointer;
+    outline: none;
+}
+
+.Location__DetailButton:active{
+    box-shadow: none;
+    border: none;
+    outline: none;
+    transform: translateY(1px);
+}
+
+.Location__DetailButton:focus{
+    outline: none;
+}

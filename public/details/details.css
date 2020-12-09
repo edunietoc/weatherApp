@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@200;400;600;700&display=swap');
+
+*{
+    font-size: 62.5%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+    font-family: 'Spartan', sans-serif;
+    display: flex;
+}
+
+
+
+.Dashboard {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 50% 50%;
+    padding: 1rem 3rem;
+}
+
+.Dashboard > div{
+    background-color: white;
+    width: 100%;
+    height: 20rem;
+    border-radius: 10px 10px 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.Dashboard__Title{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+.Dashboard__Temperature{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.Temperature__Circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #27aa80;
+    border-radius: 10rem;
+    box-shadow: 0 0 2px #888;
+    height: 10rem;
+    width: 10rem;
+}
+
+.Temperature__List h3{
+    font-size: 1.8rem;
+    margin: 0;
+    padding-bottom: 1rem;
+    color: #c5c5c5;
+}
+
+.Temperature__List h4{
+    font-size: 2rem;
+    margin:0;
+    padding-bottom: 2rem;
+    color: #a5a5a5;
+}
+
+
+.Pressure__Circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #27aa80;
+    border-bottom: none;
+    border-radius: 10rem 10rem 0 0;
+    box-shadow: 0 0 2px #888;
+    height: 10rem;
+    width: 10rem;
+}
+
+.gauge {
+    width: 100%;
+    max-width: 250px;
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    color: #004033;
+  }
+  
+  .gauge__body {
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+    background: #eeeeee;
+    position: relative;
+    border-top-left-radius: 100% 200%;
+    border-top-right-radius: 100% 200%;
+    overflow: hidden;
+  }
+  
+  .gauge__fill {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: 3%;
+    background: #009578;
+    transform-origin: center top;
+    transform: rotate(0.2turn);
+    transition: transform 0.2s ease-out;
+  }
+  
+  .gauge__cover {
+    width: 75%;
+    height: 150%;
+    background: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+  
+    /* Text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20%;
+    box-sizing: border-box;
+  }
