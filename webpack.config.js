@@ -7,6 +7,9 @@ module.exports = {
         home: path.resolve(__dirname, 'src/index.js'),
     },
     mode: 'development',
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"],
+      },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: "js/[name].js"
@@ -21,15 +24,19 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                },
+                test: /\.(tsx|jsx|js|ts)?$/,
                 exclude: /node_modules/,
-            },
+                use: {
+                  loader: "babel-loader",
+                  options: {
+                    presets: [
+                      "@babel/preset-env",
+                      "@babel/preset-react",
+                      "@babel/preset-typescript",
+                    ],
+                  },
+                },
+              },
             {
                 test: /\.(png|jpg|jpeg)$/,
                 use: {

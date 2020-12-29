@@ -1,0 +1,61 @@
+
+.SearchBar{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+}
+
+.SearchBar > form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.SearchBar__Label{
+    font-size: 4rem;
+    font-weight: 700;
+    color: #27aa80;
+    padding-left: 6rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+
+}
+
+.SearchBar__Input {
+    border: 2px solid #efefef;
+    border-right: none;
+    border-radius: 30px 0px 0px 30px;
+    padding: 2rem 0rem;
+    font-size: 3rem;
+    text-align: center;
+    width: 60vw;
+    outline: none;
+    color: #c5c5c5;
+}
+
+.SearchBar__Input:focus{
+    border: 2px solid #64e291;
+    border-right: none;
+}
+
+.SearchBar__Input::placeholder {
+    color: #c5c5c5;
+}
+
+.SearchBar__Button{
+    width: 10rem;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    border-radius: 0px 20px 20px 0px;
+    background-color: #64e291;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+}
+
+.SearchBar__Button:active{
+    transform: scale(0.95);
+}

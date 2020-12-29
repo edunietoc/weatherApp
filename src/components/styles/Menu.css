@@ -1,0 +1,39 @@
+.Sidebar{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-right: 2rem;
+    transition: 1s;
+    width: 30vw;
+}
+
+.Sidebar--item{
+    display: none;
+    padding: 3rem 2rem;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #c5c5c5;
+    border: none;
+    transition: 0.7s;
+}
+
+.Sidebar--button {
+    cursor: pointer;
+    outline: none;
+    background-color: #27aa80;
+    color: white;
+    font-size: 3rem;
+    padding: 3rem 2rem;
+    border: none;
+}
+
+
+.Sidebar--item:hover{
+    background-color: #efefef;
+    color: #27aa80;
+}
