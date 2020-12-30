@@ -14,6 +14,9 @@ const initialState = {
     currentLocationLatitude: 0,
     currentLocationLongitude: 0,
     currentLocation: undefined,
+    currentWeather: undefined,
+    selectedPlace: undefined,
+    selectedWeather: undefined
     
 }
 

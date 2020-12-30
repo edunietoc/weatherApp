@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import LocationService from '../services/LocationAPI';
 import { connect } from 'react-redux';
 import { setPlacesList } from '../actions';
+import { useHistory } from 'react-router-dom';
+
 import './styles/SearchBar.css';
 
 const SearchBar = (props) => {
@@ -10,11 +12,14 @@ const SearchBar = (props) => {
     const locationService = new LocationService();
 
     const [place, setPlace] = useState("");
+    const history = new useHistory();
+
 
     const handleSubmit = async (event)=>{
         event.preventDefault();
         const list = await locationService.getPlacesByName(place);
         props.setPlacesList(list);
+        history.push('/place-list');
     }
 
     const handleChange = (event) =>{

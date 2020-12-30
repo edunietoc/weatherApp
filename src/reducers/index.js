@@ -2,6 +2,9 @@ const TOGGLE_MENU = 'TOGGLE_MENU';
 const SET_PLACES = 'SET_PLACES';
 const SET_CURRENT_COORD = 'SET_CURRRENT_COORD';
 const SET_CURRENT_PLACE = 'SET_CURRENT_PLACE';
+const SET_CURRENT_WEATHER = 'SET_CURRENT_WEATHER';
+const SET_SELECTED_PLACE = 'SET_SELECTED_PLACE';
+const SET_SELECTED_WEATHER = 'SET_SELECTED_WEATHER';
 
 const reducer = (state, action) => {
 
@@ -15,7 +18,7 @@ const reducer = (state, action) => {
     
         case SET_PLACES:
             return{
-                ...state,
+                /* ...state, */
                 placesList: action.payload
             }
 
@@ -31,7 +34,28 @@ const reducer = (state, action) => {
                 ...state,
                 currentLocation: action.payload
             }
+
+        case SET_CURRENT_WEATHER:
+            return{
+                ...state,
+                currentWeather: action.payload
+            }
         
+        case SET_SELECTED_PLACE:
+            /* console.log("From rducer");
+            console.log(action.payload);
+            console.log("End reducer"); */
+            return{
+                ...state,
+                selectedPlace: action.payload
+            }
+
+        case SET_SELECTED_WEATHER:
+            return{
+                ...state,
+                selectedWeather: action.payload
+            }
+
         default:
             return state;
             break;

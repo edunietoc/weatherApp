@@ -1,0 +1,7 @@
+.PlaceList{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(16rem, 20rem));
+    justify-content: center;
+    gap: 2rem 1rem;
+}

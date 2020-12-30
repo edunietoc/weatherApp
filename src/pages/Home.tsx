@@ -1,19 +1,26 @@
 import React, { ReactElement, useEffect } from 'react';
 import Location from '../components/Location';
 import LocationService from '../services/LocationAPI';
+import WeatherService from '../services/WeatherAPI';
 import { connect } from 'react-redux';
-import { setCurrentLocationCoordinates, setCurrentLocationPlace } from '../actions'
+import { setCurrentLocationCoordinates, setCurrentLocationPlace, setCurrentWeather } from '../actions'
 import Loader from '../components/loader';
 
 const Home = (props):ReactElement => {
 
-    const { currentLocationLatitude, currentLocationLongitude, currentLocation, setCurrentLocationCoordinates, setCurrentLocationPlace } = props;
+    const { currentLocationLatitude,
+        currentLocationLongitude,
+        currentLocation, currentWeather,
+        setCurrentLocationCoordinates,
+        setCurrentWeather,
+        setCurrentLocationPlace } = props;
+
     const locationService = new LocationService();
 
 
     useEffect( () => {   
 
-        const fetchCoordinates =  async()=>{
+        const fetchCoordinates =  async() =>{
             
             const coordinateResult = await locationService.getCurrentLocation();
             setCurrentLocationCoordinates({latitude: coordinateResult.latitude, longitude: coordinateResult.longitude});
@@ -24,15 +31,32 @@ const Home = (props):ReactElement => {
             setCurrentLocationPlace(placeResult);
         }
 
+        const fetchCurrentWeather = async () =>{
+            const weatherResult = await WeatherService(currentLocationLatitude,currentLocationLongitude);
+            setCurrentWeather(weatherResult)
+        }
+
         fetchCoordinates();
+
         if ( currentLocationLatitude && currentLocationLongitude && currentLocation==undefined) {
             fetchCurrentPlace();
         }
 
+        if ( currentLocationLatitude && currentLocationLongitude && currentWeather==undefined) {
+            fetchCurrentWeather();
+        }
+
+
     })
 
-    if (currentLocation) {
-        return <Location countryCode={currentLocation.countryCode} state={currentLocation.state} />     
+    if (currentLocation && currentWeather) {
+        return <Location 
+        countryCode={currentLocation.countryCode} 
+        state={currentLocation.state}
+        temperature={currentWeather.temperature}
+        humidity={currentWeather.humidity}
+        description={currentWeather.description}
+        />     
     }else{
         return <Loader/>;
     }
@@ -42,12 +66,14 @@ const Home = (props):ReactElement => {
 const mapStateToProps = (state, props) =>({
     currentLocationLatitude: state.currentLocationLatitude,
     currentLocationLongitude: state.currentLocationLongitude,
-    currentLocation: state.currentLocation
+    currentLocation: state.currentLocation,
+    currentWeather: state.currentWeather
 })
 
 const mapDispatchToProps = {
     setCurrentLocationCoordinates,
-    setCurrentLocationPlace
+    setCurrentLocationPlace,
+    setCurrentWeather
 }
 
 export default connect(

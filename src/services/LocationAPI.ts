@@ -20,7 +20,7 @@ class LocationService {
     }
 
 
-    async getPlacesByName(place:string):any{
+    async getPlacesByName(place:string){
 
         const API = `https://api.opencagedata.com/geocode/v1/json?q=${place}&key=${this.key}`
 
@@ -36,9 +36,7 @@ class LocationService {
             return new PlaceModel(_latitude,_longitude,_countryCode,_country,_state)
 
         })
-        return{
-            places: placeList,      
-        }
+        return placeList;
     }
 
     async getCountryByCoordinates(latitude:number, longitude:number):Promise<any>{

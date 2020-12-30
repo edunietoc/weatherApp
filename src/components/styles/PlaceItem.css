@@ -1,0 +1,33 @@
+.Place{
+
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: auto;
+    text-decoration: none;
+    color: gray;
+}
+
+.Place__Image{
+    width: 64px;
+    padding-left: 1rem;
+}
+
+.Place__Description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.Place__Country{
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.Place__State{
+    color: #c5c5c5;
+    font-size: 1.4rem;
+    margin: 0;
+}
