@@ -1,5 +1,7 @@
 import WeatherModel from '../models/weather';
 
+/* https://openweathermap.org/api/one-call-api */
+
 const key = "4e43d1ebb8f58f66eb28571243f0bc00";
 
 const WeatherService = async (latitude:number, longitude:number) =>{

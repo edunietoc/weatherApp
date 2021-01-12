@@ -1,5 +1,8 @@
 import PlaceModel from '../models/places';
 
+
+/* https://opencagedata.com/api#forward-resp */
+
 class LocationService {
 
     latitude:number;
@@ -34,7 +37,6 @@ class LocationService {
             const _latitude:number = element['geometry']['lat']
             const _longitude:number = element['geometry']['lng']
             return new PlaceModel(_latitude,_longitude,_countryCode,_country,_state)
-
         })
         return placeList;
     }
