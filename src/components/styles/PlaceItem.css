@@ -1,10 +1,16 @@
 .Place{
-
     display: flex;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     width: auto;
     text-decoration: none;
     color: gray;
+    transition: 300ms;
+    border-radius: 5px;
+}
+
+.PLace:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,1,200,0.5);
+    color: white;
 }
 
 .Place__Image{

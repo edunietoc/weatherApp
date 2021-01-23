@@ -13,7 +13,7 @@ const PlaceList = (props) => {
         return (
             <div className='PlaceList'>
                 {placesList.map( (place) => <PlaceItem 
-                key={place.countryCode} 
+                key={place.countryCode + place.state} 
                 country={place.country} 
                 countryCode={place.countryCode} 
                 state={place.state}

@@ -4,7 +4,7 @@ import './styles/Location.css';
 
 const Location = (props) => {
 
-    const { countryCode, state, temperature, humidity, description } = props;
+    const { countryCode, state, temperature, humidity, description, icon } = props;
 
     return(
         <section className="Location">
@@ -12,7 +12,7 @@ const Location = (props) => {
           <figure className="Location__Image">
             <img
               className="Location__Icon"
-              src="https://img.icons8.com/office/80/000000/partly-cloudy-day--v2.png"
+              src={icon}
             />
           </figure>
           <div className="Location__Description">

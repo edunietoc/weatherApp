@@ -1,9 +1,10 @@
 import React, { useEffect} from 'react';
 import { connect } from 'react-redux';
 import Location from '../components/Location';
-import Loader from '../components/loader';
+import Loader from '../components/Loader';
 import WeatherService from '../services/WeatherAPI';
 import { setSelectedWeather } from '../actions';
+import getIcon from '../services/WeatherStatusIcons';
 
 const PlaceSelected = (props) => {
 
@@ -29,6 +30,7 @@ const PlaceSelected = (props) => {
         temperature={selectedWeather.temperature}
         humidity={selectedWeather.humidity}
         description={selectedWeather.description}
+        icon={getIcon(selectedWeather.iconCode)}
         />     
     }else{
         return <Loader/>;

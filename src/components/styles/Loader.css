@@ -1,8 +1,19 @@
+.Loader__Container{
+
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+
+}
+
 .lds-dual-ring {
-    display: inline-block;
-    position: center;
-    width: 80px;
-    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    
   }
   .lds-dual-ring:after {
     content: " ";

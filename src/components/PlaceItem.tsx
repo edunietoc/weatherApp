@@ -18,7 +18,7 @@ const PlaceItem = (props) =>{
 
     return(
 
-        <button onClick={handleClick} className='Place'>
+        <div onClick={handleClick} className='Place'>
             <img 
             src={`https://www.countryflags.io/${countryCode}/flat/64.png`} 
             alt="countryFlag"
@@ -28,7 +28,7 @@ const PlaceItem = (props) =>{
                 <h3 className='Place__Country'>{country}</h3>
                 <h4 className='Place__State'>{state}</h4>
             </div>
-        </button>
+        </div>
 
     );
 }

@@ -2,10 +2,13 @@ import * as React from 'react';
 import './styles/Loader.css';
 
 
-const Loader = () => {
+const Loader = ():React.ReactElement => {
 
     return(
-        <div className="lds-dual-ring"></div>
+        <div className='Loader__Container'>
+            <div className="lds-dual-ring"></div>
+        </div>
+        
     );
 }
 

@@ -4,19 +4,26 @@ import LocationService from '../services/LocationAPI';
 import WeatherService from '../services/WeatherAPI';
 import { connect } from 'react-redux';
 import { setCurrentLocationCoordinates, setCurrentLocationPlace, setCurrentWeather } from '../actions'
-import Loader from '../components/loader';
+import Loader from '../components/Loader';
+import WeatherModel from '../models/weather';
+import getIcon from '../services/WeatherStatusIcons';
+
+
 
 const Home = (props):ReactElement => {
 
     const { currentLocationLatitude,
         currentLocationLongitude,
-        currentLocation, currentWeather,
+        currentLocation,
+        
         setCurrentLocationCoordinates,
         setCurrentWeather,
         setCurrentLocationPlace } = props;
 
-    const locationService = new LocationService();
+    const currentWeather:WeatherModel = props.currentWeather;
 
+
+    const locationService:LocationService = new LocationService();
 
     useEffect( () => {   
 
@@ -56,7 +63,8 @@ const Home = (props):ReactElement => {
         temperature={currentWeather.temperature}
         humidity={currentWeather.humidity}
         description={currentWeather.description}
-        />     
+        icon= {getIcon(currentWeather.iconCode)}
+        />;
     }else{
         return <Loader/>;
     }
