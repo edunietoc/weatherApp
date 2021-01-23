@@ -12,8 +12,8 @@ const PlaceList = (props) => {
     if (placesList) {
         return (
             <div className='PlaceList'>
-                {placesList.map( (place) => <PlaceItem 
-                key={place.countryCode + place.state} 
+                {placesList.map( (place, index) => <PlaceItem 
+                key={index} 
                 country={place.country} 
                 countryCode={place.countryCode} 
                 state={place.state}
